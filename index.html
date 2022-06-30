@@ -116,6 +116,21 @@
             var modalContent = document.getElementById("words")
             var span = document.getElementsByClassName("close")[0]
 
+            // sound buttons
+            const sndBtn = document.createElement("span")
+            const vol = document.createElement("i")
+
+            const sndAtt = document.createAttribute("class")
+            sndAtt.value = "btn"
+
+            const vAtt = document.createAttribute("class")
+            vAtt.value = "fa fa-volume-down"
+
+            vol.setAttributeNode(vAtt)
+            sndBtn.setAttributeNode(sndAtt)
+            sndBtn.appendChild(vol)
+
+
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
@@ -128,6 +143,12 @@
                         }
                         modalContent.innerHTML = "Ceng-ceng consists of small cymbals made of thick brass and a large dome. In gamelan gambuh, which is a type of gamelan performance that has been around since 14th century, this percussion is used to enrich the beats peformed on other percussions, such as \"kendang\", \"klenang\", and \"kemenak (gumanak)\"."
                         modalContent.innerHTML += "\n\nUse the speaker button below to find out how it sounds.\n\n\nImage taken from: the University of Washington Ethnomusicology Archives.\nSound sample produced by: Musica, with background music by Suara Nakal."
+                        modalContent.appendChild(sndBtn)
+
+                        sndBtn.onclick = function() {
+                            document.getElementById("cengmusic").play()
+                        }
+
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -262,6 +283,11 @@
         </div>
   
     </div>
+
+    <!-- audio files -->
+    <audio id="cengmusic" src="sounds/hujan-mas-cengceng.mp3"></audio>
+    <audio id="kendangmusic" src="sounds/hujan-mas-kendang-lanang.mp3"></audio>
+    <audio id="rebabsuling" src="sounds/gamelan-sulings-and-rebab.mp3"></audio>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
