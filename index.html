@@ -181,22 +181,6 @@
                             modal.style.display = "none";
                         }
                         break
-                    
-                    case "kempul":
-
-                        myText.innerHTML = "This is kempul"
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "Kempul is a medium gong"
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
 
                     case "kendang":
 
@@ -308,11 +292,6 @@
         <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-image id="gumanakjpg" src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
-        </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-kempul.patt' id="kempul"
-        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="kempuljpg" src="images/kempul.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
