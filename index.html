@@ -91,21 +91,7 @@
 </style>
 
 <script>
-    let myText = document.querySelector("#textContent")
-    const element = document.querySelector('.info-text')
-            
-    const btn = document.createElement("span")
-    const info = document.createElement("i")
     
-    const btnAtt = document.createAttribute("class")
-    btnAtt.value = "btn"
-    
-    const iAtt = document.createAttribute("class")
-    iAtt.value = "fa fa-volume-up"
-    
-    info.setAttributeNode(iAtt)
-    btn.setAttributeNode(btnAtt)
-    btn.appendChild(info)
 
     var modal = document.getElementById("myModal")
     var modalContent = document.getElementById("words")
@@ -115,7 +101,22 @@
     {
         init: function () 
         {
+            let myText = document.querySelector("#textContent")
+            const element = document.querySelector('.info-text')
             
+            const btn = document.createElement("span")
+            const info = document.createElement("i")
+    
+            const btnAtt = document.createAttribute("class")
+            btnAtt.value = "btn"
+    
+            const iAtt = document.createAttribute("class")
+            iAtt.value = "fa fa-volume-up"
+    
+            info.setAttributeNode(iAtt)
+            btn.setAttributeNode(btnAtt)
+            btn.appendChild(info)
+
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
