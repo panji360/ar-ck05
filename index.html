@@ -185,6 +185,22 @@
                             modal.style.display = "none"
                         }
                         break
+
+                    case "kajar":
+
+                        myText.innerHTML = "This is kajar"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "A small gong"
+                        span.onclick = function() {
+                            modal.style.display = "none"
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none"
+                        }
+                        break
                 }
 
             })
@@ -237,6 +253,11 @@
         <a-marker markerhandler type='pattern' url='textures/pattern-suling.patt' id="suling"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-image id="sulingjpg" src="images/suling.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="kajar"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="kajarjpg" src="images/kajar.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-entity camera></a-entity>
