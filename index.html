@@ -122,12 +122,12 @@
                     
                     case "gumanak":
 
-                        myText.innerHTML = "This is gumanak"
+                        myText.innerHTML = "This is ceng-ceng"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Gumanak is the Balinese equivalent to Kemanak and is considered an ancient instrument!"
+                        modalContent.innerHTML = "A type of percussion"
                         span.onclick = function() {
                             modal.style.display = "none"
                         }
@@ -235,9 +235,9 @@
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false" gesture-detector>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
+        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="gumanakjpg" src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
