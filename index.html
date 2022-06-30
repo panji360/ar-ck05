@@ -150,13 +150,13 @@
                         }
                         break
                     
-                    case "kendang":
-                        myText.innerHTML = "This is kendang  "
+                    case "kempul":
+                        myText.innerHTML = "This is kempul  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Comes in pairs"
+                        modalContent.innerHTML = "Medium gong"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -224,10 +224,10 @@
             <a-image src="images/gentorag.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
+        <a-marker markerhandler type='pattern' url='textures/pattern-kempul.patt' id="kempul"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image src="images/kendang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image src="images/kempul.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
