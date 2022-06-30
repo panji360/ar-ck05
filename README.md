@@ -1,1 +1,1 @@
-# ar-ck05
+# AR interactions for Candra Kirana scene
