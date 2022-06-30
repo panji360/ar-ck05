@@ -92,11 +92,6 @@
 
 <script>
     
-
-    var modal = document.getElementById("myModal")
-    var modalContent = document.getElementById("words")
-    var span = document.getElementsByClassName("close")[0]
-
     AFRAME.registerComponent('markerhandler', 
     {
         init: function () 
@@ -117,6 +112,10 @@
             btn.setAttributeNode(btnAtt)
             btn.appendChild(info)
 
+            var modal = document.getElementById("myModal")
+            var modalContent = document.getElementById("words")
+            var span = document.getElementsByClassName("close")[0]
+
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
@@ -124,11 +123,15 @@
                     
                     case "ceng":
                         myText.innerHTML = "This is cengceng  "
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
+
+                        let imgToClick = document.getElementById("cengjpg")
+
+                        imgToClick.addEventListener('click', function(event) {
                             modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "Percussion"
+                            modalContent.innerHTML = "Percussion"
+                        })
+                        
+                        
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -238,20 +241,6 @@
         }
     })
 
-    AFRAME.registerComponent('cursor-listener', {
-        init: function () {
-            this.el.addEventListener('click', function (event) {
-                modal.style.display = "block"
-                modalContent.innerHTML = "Percussion"
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-            })
-        }
-    })
 
 </script>
 
@@ -273,12 +262,12 @@
     </div>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
-        renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false" gesture-detector>
+        renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
 
         <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            emitevents="true" cursor="rayOrigin: mouse;">
 
-            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable" cursor-listener></a-image>
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" ></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
