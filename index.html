@@ -91,30 +91,31 @@
 </style>
 
 <script>
+    let myText = document.querySelector("#textContent")
+    const element = document.querySelector('.info-text')
+            
+    const btn = document.createElement("span")
+    const info = document.createElement("i")
+    
+    const btnAtt = document.createAttribute("class")
+    btnAtt.value = "btn"
+    
+    const iAtt = document.createAttribute("class")
+    iAtt.value = "fa fa-volume-up"
+    
+    info.setAttributeNode(iAtt)
+    btn.setAttributeNode(btnAtt)
+    btn.appendChild(info)
+
+    var modal = document.getElementById("myModal")
+    var modalContent = document.getElementById("words")
+    var span = document.getElementsByClassName("close")[0]
+
     AFRAME.registerComponent('markerhandler', 
     {
         init: function () 
         {
-            let myText = document.querySelector("#textContent")
-            const element = document.querySelector('.info-text')
             
-            const btn = document.createElement("span")
-            const info = document.createElement("i")
-    
-            const btnAtt = document.createAttribute("class")
-            btnAtt.value = "btn"
-    
-            const iAtt = document.createAttribute("class")
-            iAtt.value = "fa fa-volume-up"
-    
-            info.setAttributeNode(iAtt)
-            btn.setAttributeNode(btnAtt)
-            btn.appendChild(info)
-
-            var modal = document.getElementById("myModal")
-            var modalContent = document.getElementById("words")
-            var span = document.getElementsByClassName("close")[0]
-
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
@@ -235,6 +236,22 @@
 
         }
     })
+
+    AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+            this.el.addEventListener('click', function (event) {
+                modal.style.display = "block"
+                modalContent.innerHTML = "Percussion"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+            })
+        }
+    })
+
 </script>
 
 <body style='margin : 0px; overflow: hidden;'>
@@ -260,7 +277,7 @@
         <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
-            <a-image src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable" cursor-listener></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
