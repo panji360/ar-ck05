@@ -120,33 +120,15 @@
 
                 switch (this.el.id)
                 {
-                    
-                    case "ceng":
-                        myText.innerHTML = "This is cengceng  "
-
-                        let imgToClick = document.getElementById("cengjpg")
-
-                        imgToClick.addEventListener('click', function(event) {
-                            modal.style.display = "block"
-                            modalContent.innerHTML = "Percussion"
-                        })
-                        
-                        
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
-                    
+                          
                     case "gentorag":
                         myText.innerHTML = "This is gentorag  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Bells"
+                        modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).\nIn gamelan gambuh ensemble, gentorage is shaken in time with the strokes of a large gong."
+                        modalContent.innerHTML += "\n\nImage taken from: the University of Washington Ethnomusicology Archives."
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -161,7 +143,8 @@
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Small gong"
+                        modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\". In fast tempos, \"kajar\" would perform the beat, while in slower tempo its performed in a pattern that immitates the strokes of the two \"kendang\" drums."
+                        modalContent.innerHTML += "\n\nImage taken from: the University of Washington Ethnomusicology Archives."
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -267,12 +250,6 @@
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
-            emitevents="true" cursor="rayOrigin: mouse;">
-
-            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" ></a-image>
-        </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
