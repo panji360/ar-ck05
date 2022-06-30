@@ -179,6 +179,21 @@
                             modal.style.display = "none";
                         }
                         break
+
+                    case "kendang":
+                        myText.innerHTML = "This is kendang  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Come in pairs"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
                 }
 
             })
@@ -236,6 +251,11 @@
             <a-image src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
+        <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image src="images/kendang-lanang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
         
         <a-entity camera></a-entity>
     </a-scene>
