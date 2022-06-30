@@ -120,14 +120,29 @@
 
                 switch (this.el.id)
                 {
-                          
+                    case "ceng":
+                        myText.innerHTML = "This is ceng-ceng  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Ceng-ceng consists of small cymbals made of thick brass and a large dome. In gamelan gambuh, which is a type of gamelan performance that has been around since 14th century, this percussion is used to enrich the beats peformed on other percussions, such as \"kendang\", \"klenang\", and \"kemenak (gumanak)\"."
+                        modalContent.innerHTML += "\n\nUse the speaker button below to find out how it sounds.\n\n\nImage taken from: the University of Washington Ethnomusicology Archives.\nSound sample produced by: Musica, with background music by Suara Nakal."
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
                     case "gentorag":
                         myText.innerHTML = "This is gentorag  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).\nIn gamelan gambuh ensemble, gentorage is shaken in time with the strokes of a large gong."
+                        modalContent.innerHTML = "Gentorag is a bell tree consisting of a wooden pole and surrounded by three wooden rings affixed to bamboo cross-bars. It is one of the iconic instruments played in Balinese gamelan of gambuh type, which is descended from ancient Majapahit gambuh performances (circa 14th century).\nIn gamelan gambuh ensemble, gentorag is shaken in time with the strokes of a large gong."
                         modalContent.innerHTML += "\n\nImage taken from: the University of Washington Ethnomusicology Archives."
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -143,7 +158,7 @@
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\". In fast tempos, \"kajar\" would perform the beat, while in slower tempo its performed in a pattern that immitates the strokes of the two \"kendang\" drums."
+                        modalContent.innerHTML = "Klenang is a high-pitched gong made of bronze and mounted on a stand. In gamelan gambuh, this percussion is used as a time tracker. It is played between each beat performed on another small gong called \"kajar\", while the \"kajar\" gong is performed in a pattern that reinforces the strokes of the two \"kendang\" drums."
                         modalContent.innerHTML += "\n\nImage taken from: the University of Washington Ethnomusicology Archives."
                         span.onclick = function() {
                             modal.style.display = "none";
@@ -250,6 +265,12 @@
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
         renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false">
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
