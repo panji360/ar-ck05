@@ -166,21 +166,6 @@
                         }
                         break
                     
-                    case "kajar":
-
-                        myText.innerHTML = "This is kajar"
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "Kajar is a small gong"
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
 
                     case "kendang":
 
@@ -198,21 +183,6 @@
                         }
                         break
                     
-                    case "klenang":
-
-                        myText.innerHTML = "This is klenang"
-                        myText.appendChild(btn)
-                        btn.onclick = function() {
-                            modal.style.display = "block"
-                        }
-                        modalContent.innerHTML = "Klenang is a small gong"
-                        span.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        modal.onclick = function() {
-                            modal.style.display = "none";
-                        }
-                        break
                     
                     case "rebab":
 
@@ -297,11 +267,6 @@
         <a-marker markerhandler type='pattern' url='textures/pattern-kendang.patt' id="kendang"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
             <a-image id="kendangjpg" src="images/kendang-lanang.jpg" rotation="-90 0 0" class="clickable"></a-image>
-        </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-klenang.patt' id="klenang"
-        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="klenangjpg" src="images/klenang.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-rebab.patt' id="rebab"
