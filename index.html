@@ -105,7 +105,7 @@
             btnAtt.value = "btn"
     
             const iAtt = document.createAttribute("class")
-            iAtt.value = "fa fa-info-circle"
+            iAtt.value = "fa fa-volume"
     
             info.setAttributeNode(iAtt)
             btn.setAttributeNode(btnAtt)
@@ -118,20 +118,14 @@
             this.el.addEventListener('markerFound', () => {
 
                 switch (this.el.id)
-                {
-                    case "kanchil":
-                        element.style.backgroundColor = 'rgba(15, 185, 23, 0.8)'    
-                        myText.innerHTML = "You found kanchil! This one's name is Puspa"
-                        break
-                    
-                    case "lapis":
-                        element.style.backgroundColor = 'rgba(15, 61, 185, 0.8)'
-                        myText.innerHTML = "Not the poison! This is kuih lapis  "
+                {                   
+                    case "ceng":
+                        myText.innerHTML = "This is cengceng"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "This sweet snack made of steamed glutinous rice is quite popular in Southern China territories and it comes under many names and colours. In Vietnam, a similar snack is called \"banh da lon\" and in Cambodia, \"num chak chan\".\n\nEven though the exact time period when this snack came to Southeast Asia is not fully known, it is thought to be introduced by Chinese immigrants and popularised as a Nyonya cuisine in Malaysia and Indonesia."
+                        modalContent.innerHTML = "Cengceng is a percussion"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -140,14 +134,14 @@
                         }
                         break
                     
-                    case "ketan":
-                        element.style.backgroundColor = 'rgba(177, 34, 15, 0.8)'
-                        myText.innerHTML = "You found the poison! This is tapai pulut.  "
+                    case "gentorag":
+
+                        myText.innerHTML = "This is gentorag"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "According to \"Hikayat Panji Semirang\", where this Panji story was adapted from, tapai was used in the poisoning of the Queen.\n\nBased on the culinary traditions traced from the descendants of Majapahit community in Indonesia, it is believed that this snack, which is made of fermented rice, has existed since 14th Century or even earlier!\n\nIn Java, the original setting of Panji, tapai pulut is mostly known as \"tape ketan\"."
+                        modalContent.innerHTML = "Gentorag has a series of bell"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -156,14 +150,14 @@
                         }
                         break
                     
-                    case "dodol":
-                        element.style.backgroundColor = 'rgba(15, 61, 185, 0.8)'
-                        myText.innerHTML = "Not the poison! This is dodol  "
+                    case "gumanak":
+
+                        myText.innerHTML = "This is gumanak"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Dodol is one of the traditional snacks known to have existed since Majapahit era (14th century or even earlier)!\n\nDodol is popular in Indonesia, Malaysia, and Thailand, where it is perhaps more well-known as \"kalamea\".\n\nA variant of this snack called \"wajik\" has also existed since Majapahit era and is still popular today in Java (the original setting of Panji stories) and Brunei."
+                        modalContent.innerHTML = "Gumanak is the Balinese equivalent to Kemanak and is considered an ancient instrument!"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -172,14 +166,14 @@
                         }
                         break
                     
-                    case "ondeh":
-                        element.style.backgroundColor = 'rgba(15, 61, 185, 0.8)'
-                        myText.innerHTML = "Not the poison! This is ondeh-ondeh  "
+                    case "kajar":
+
+                        myText.innerHTML = "This is kajar"
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Made of steamed glutinous rice with gula malaka (palm sugar) filling, this snack is also popularised as a Nyonya cuisine in both Malaysia and Indonesia.\n\nIn Java (the original setting of Panji stories), the snack is more commonly known as \"klepon\", while the name \"onde-onde\" is reserved for another type of round-shaped snack of Chinese origin (\"jiandui\"), which is fried, filled with bean paste, and coated with sesame seeds."
+                        modalContent.innerHTML = "Kajar is a small gong"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -195,7 +189,7 @@
             //el.sceneEl will listen to (all elements in) the scene as compared to any particular element like above
             this.el.sceneEl.addEventListener('markerLost', () => {
                 myText.innerHTML = "Please scan a marker"
-                element.style.backgroundColor = 'rgba(15, 61, 185, 0.8)'
+
             })
 
         }
@@ -214,44 +208,33 @@
     <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p id="words">Yummy!</p>
+            <p id="words">Wow!</p>
         </div>
   
     </div>
 
     <a-scene embedded arjs='trackingMethod: best; sourceType: webcam; debugUIEnabled: false;' 
-        renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false" gltf-model="dracoDecoderPath: https://www.gstatic.com/draco/v1/decoders/" gesture-detector>
+        renderer="colorManagement: true; logarithmicDepthBuffer: true" vr-mode-ui="enabled: false" gesture-detector>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-kanchil.patt' id="kanchil"
+        <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-entity gltf-model=”url(models/kanchil.glb)” scale="0.4 0.4 0.4" rotation="-90 0 0" class="clickable" gesture-handler></a-entity>
+            <a-image id="cengjpg" src="images/cengceng.jpg" class="clickable"></a-image>
+        </a-marker>
+        
+        <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="gentoragjpg" src="images/gentorag.jpg" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-kueh-lapis.patt' id="lapis"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-entity gltf-model=”url(models/kueh-lapis.glb)” scale="0.5 0.5 0.5" rotation="-90 0 0" class="clickable" gesture-handler></a-entity>
+        <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="gumanakjpg" src="images/gumanak.jpg" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-tape-ketan.patt' id="ketan"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-entity gltf-model=”url(models/tape-ketan.glb)” scale="0.4 0.4 0.4" rotation="-90 0 0" class="clickable" gesture-handler></a-entity>
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="gumanak"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="kajarjpg" src="images/kajar.jpg" class="clickable"></a-image>
         </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-dodol.patt' id="dodol"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-entity gltf-model=”url(models/dodol.glb)” rotation="-90 0 0" class="clickable" gesture-handler></a-entity>
-        </a-marker>
-
-        <a-marker markerhandler type='pattern' url='textures/pattern-ondeh2.patt' id="ondeh"
-            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-
-            <a-entity gltf-model=”url(models/ondeh.glb)” rotation="-90 0 0" class="clickable" gesture-handler></a-entity>
-        </a-marker>
-
         
         <a-entity camera></a-entity>
     </a-scene>
