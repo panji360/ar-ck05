@@ -105,7 +105,7 @@
             btnAtt.value = "btn"
     
             const iAtt = document.createAttribute("class")
-            iAtt.value = "fa fa-volume"
+            iAtt.value = "fa fa-volume-up"
     
             info.setAttributeNode(iAtt)
             btn.setAttributeNode(btnAtt)
@@ -182,6 +182,85 @@
                         }
                         break
                     
+                    case "kempul":
+
+                        myText.innerHTML = "This is kempul"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Kempul is a medium gong"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "kendang":
+
+                        myText.innerHTML = "This is kendang (lanang)"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Kendang is an essential percussion, and has both lanang (male) and wadon (female) versions"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+                    
+                    case "klenang":
+
+                        myText.innerHTML = "This is klenang"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Klenang is a small gong"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+                    
+                    case "rebab":
+
+                        myText.innerHTML = "This is rebab"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Rebab is a string instrument and essential in gambuh"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+                    
+                    case "suling":
+
+                        myText.innerHTML = "This is suling"
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "Suling is a wooden flute and essential in gambuh"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
                 }
 
             })
@@ -218,22 +297,42 @@
 
         <a-marker markerhandler type='pattern' url='textures/pattern-cengceng.patt' id="ceng"
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="cengjpg" src="images/cengceng.jpg" class="clickable"></a-image>
+            <a-image id="cengjpg" src="images/cengceng.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-marker markerhandler type='pattern' url='textures/pattern-gentorag.patt' id="gentorag"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="gentoragjpg" src="images/gentorag.jpg" class="clickable"></a-image>
+            <a-image id="gentoragjpg" src="images/gentorag.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
         <a-marker markerhandler type='pattern' url='textures/pattern-gumanak.patt' id="gumanak"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="gumanakjpg" src="images/gumanak.jpg" class="clickable"></a-image>
+            <a-image id="gumanakjpg" src="images/gumanak.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
 
-        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="gumanak"
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="kempul"
         raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
-            <a-image id="kajarjpg" src="images/kajar.jpg" class="clickable"></a-image>
+            <a-image id="kempuljpg" src="images/kempul.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="kendang"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="kendangjpg" src="images/kendang-lanang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="klenang"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="klenangjpg" src="images/klenang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="rebab"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="rebabjpg" src="images/rebab.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kajar.patt' id="suling"
+        raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+            <a-image id="sulingjpg" src="images/suling.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-entity camera></a-entity>
