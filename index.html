@@ -180,13 +180,28 @@
                         }
                         break
 
-                    case "kendang":
-                        myText.innerHTML = "This is kendang  "
+                    case "rebab":
+                        myText.innerHTML = "This is rebab  "
                         myText.appendChild(btn)
                         btn.onclick = function() {
                             modal.style.display = "block"
                         }
-                        modalContent.innerHTML = "Come in pairs"
+                        modalContent.innerHTML = "A string instrument"
+                        span.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        modal.onclick = function() {
+                            modal.style.display = "none";
+                        }
+                        break
+
+                    case "suling":
+                        myText.innerHTML = "This is suling  "
+                        myText.appendChild(btn)
+                        btn.onclick = function() {
+                            modal.style.display = "block"
+                        }
+                        modalContent.innerHTML = "A flute"
                         span.onclick = function() {
                             modal.style.display = "none";
                         }
@@ -255,6 +270,12 @@
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
             <a-image src="images/rebab.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-suling.patt' id="suling"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image src="images/suling.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-entity camera></a-entity>
