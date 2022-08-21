@@ -273,6 +273,10 @@
                             modal.style.display = "none";
                         }
                         break
+
+                    case "kanchil":
+                        myText.innerHTML = "You found the last kanchil in this act!\nHer name is Sari"
+                        break
                 }
 
             })
@@ -353,6 +357,12 @@
             raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
 
             <a-image id="kendangjpg" src="images/kendang.jpg" rotation="-90 0 0" class="clickable"></a-image>
+        </a-marker>
+
+        <a-marker markerhandler type='pattern' url='textures/pattern-kanchil3.patt' id="kanchil"
+            raycaster="objects: .clickable" emitevents="true" cursor="fuse: false; rayOrigin: mouse;">
+
+            <a-image id="kanchiljpg" src="images/kanchilv8.jpg" rotation="-90 0 0" class="clickable"></a-image>
         </a-marker>
         
         <a-entity camera></a-entity>
